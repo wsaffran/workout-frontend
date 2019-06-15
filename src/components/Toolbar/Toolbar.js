@@ -1,10 +1,13 @@
 import React from 'react'
 
+import './Toolbar.css'
+
 const Toolbar = () => (
-  <header className="navigation">
-    <nav>
-      <div className="navigation_logo"><a href="/">WORKOUT</a></div>
-      <div>
+  <header className="toolbar">
+    <nav className="toolbar_navigation">
+      <div className="toolbar_logo"><a href="/">WORKOUT</a></div>
+      <div className="spacer"></div>
+      <div className="toolbar_navigation-items">
         <ul>
           <li><a href="/">Start</a></li>
           <li><a href="/">History</a></li>

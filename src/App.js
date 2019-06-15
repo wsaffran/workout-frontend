@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 // import { Route, Switch } from 'react-router-dom';
 
-import Navigation from './components/Navigation/Navigation'
+import Toolbar from './components/Toolbar/Toolbar'
 
 import './App.css';
 
@@ -32,7 +32,12 @@ class App extends React.Component {
 
   render () {
     return (
-        <Navigation />
+      <div className="App">
+        <Toolbar />
+        <main>
+          <p>This is the page content.</p>
+        </main>
+      </div>
     )
   }
 
