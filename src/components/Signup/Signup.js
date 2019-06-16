@@ -1,11 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import './Login.css'
+import './Signup.css'
 
-class Login extends React.Component {
+class Signup extends React.Component {
 
   state = {
+    firstName: "",
+    lastName: "",
     email: "",
     password: ""
   }
@@ -22,12 +24,44 @@ class Login extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    fetch('http://localhost:3001/signup', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accepts": "application/json"
+      },
+      body: JSON.stringify(this.state)
+    })
+    .then(response => response.json())
+    .then(response => {
+      if (response.errors) {
+        alert(response.errors)
+      } else {
+        this.props.setCurrentUser(response)
+        localStorage.setItem("token", response.token)
+        this.props.history.push('/')
+      }
+    })
   }
 
   render () {
     return (
-      <div className="login">
+      <div className="signup">
         <form onSubmit={this.handleSubmit} autoComplete="off">
+          <input
+            onChange={this.handleChange}
+            type="text"
+            name="firstName"
+            value={this.state.firstName}
+            placeholder="First Name"
+          />
+          <input
+            onChange={this.handleChange}
+            type="text"
+            name="lastName"
+            value={this.state.lastName}
+            placeholder="Last Name"
+          />
           <input
             onChange={this.handleChange}
             type="text"
@@ -46,7 +80,7 @@ class Login extends React.Component {
             disabled={!this.validateForm()}
             type="submit"
           >
-            Login
+            Sign Up
           </button>
         </form>
       </div>
@@ -69,4 +103,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Signup)
