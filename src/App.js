@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
-// import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Toolbar from './components/Toolbar/Toolbar'
+import Login from './components/Login/Login'
 
 import './App.css';
 
@@ -35,7 +36,9 @@ class App extends React.Component {
       <div className="App">
         <Toolbar />
         <main>
-          <p>This is the page content.</p>
+          <Switch>
+            <Route path="/login" component={ Login } />
+          </Switch>
         </main>
       </div>
     )
