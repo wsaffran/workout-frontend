@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Toolbar from './components/Toolbar/Toolbar'
 import Login from './components/Login/Login'
+import Signup from './components/Signup/Signup'
 
 import './App.css';
 
@@ -38,6 +39,7 @@ class App extends React.Component {
         <main>
           <Switch>
             <Route path="/login" component={ Login } />
+            <Route path="/signup" component={ Signup } />
           </Switch>
         </main>
       </div>
