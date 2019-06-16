@@ -18,9 +18,10 @@
 }
 
 .toolbar_logo a {
-  color: black;
+  color: rgb(236, 164, 0);
   text-decoration: none;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .spacer {
@@ -45,5 +46,5 @@
 
 .toolbar_navigation-items a:hover,
 .toolbar_navigation-items a:active {
-  color: blue;
+  color: rgb(236, 164, 0);
 }
