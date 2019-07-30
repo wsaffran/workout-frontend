@@ -24,7 +24,7 @@ class Toolbar extends React.Component {
                 <ul>
                   <li><a href="/">Training Plans</a></li>
                   <li><a href="/">Exercises</a></li>
-                  <li><a href="/">History</a></li>
+                  <li><a href={`/users/${this.props.currentUser.id}/log`}>History</a></li>
                   <li><a href="/">Workout</a></li>
                   <li><a href={`/users/${this.props.currentUser.id}/${this.props.currentUser.first_name}_${this.props.currentUser.last_name}`}>{this.props.currentUser.first_name}</a></li>
                 </ul>
