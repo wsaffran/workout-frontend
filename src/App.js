@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Toolbar from './components/Toolbar/Toolbar'
 import Login from './components/Login/Login'
 import Signup from './components/Signup/Signup'
+import User from './components/User/User'
 
 import './App.css';
 
@@ -40,6 +41,11 @@ class App extends React.Component {
           <Switch>
             <Route path="/login" component={ Login } />
             <Route path="/signup" component={ Signup } />
+            <Route exact path='/users/:id/:first_name_:last_name' render={ (routeProps) => {
+                return <User {...routeProps} activeItem={routeProps.match.params.currentUser}/>
+              }
+            } />
+
           </Switch>
         </main>
       </div>
