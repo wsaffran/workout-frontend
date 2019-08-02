@@ -25,8 +25,25 @@ class Toolbar extends React.Component {
                   <li><a href="/">Training Plans</a></li>
                   <li><a href="/">Exercises</a></li>
                   <li><a href={`/users/${this.props.currentUser.id}/log`}>History</a></li>
-                  <li><a href="/">Workout</a></li>
-                  <li><a href={`/users/${this.props.currentUser.id}/${this.props.currentUser.first_name}_${this.props.currentUser.last_name}`}>{this.props.currentUser.first_name}</a></li>
+                  <li><a href={`/users/${this.props.currentUser.id}/workouts`}>Workout</a></li>
+                  {/*
+                    <li><a href={`/users/${this.props.currentUser.id}/${this.props.currentUser.first_name}_${this.props.currentUser.last_name}`}>{this.props.currentUser.first_name}</a></li>
+                    */}
+
+                  {/*might want to do a link to button instead of an href*/}
+                  <li>
+                    <div class="dropdown">
+                      <a href={`/users/${this.props.currentUser.id}/${this.props.currentUser.first_name}_${this.props.currentUser.last_name}`}>{this.props.currentUser.first_name}
+                        <i class="fa fa-caret-down"></i>
+                      </a>
+                      <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                    </div>
+                  </li>
+
                 </ul>
               }
             </div>
