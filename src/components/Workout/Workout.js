@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import './Log.css'
+import './Workout.css'
 
-class Log extends React.Component {
+class Workout extends React.Component {
 
   render () {
     return (
       <div>
-        <h1>Workout Log</h1>
+        <h1>Workout</h1>
       </div>
     )
   }
@@ -29,4 +29,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Log)
+export default connect(mapStateToProps, mapDispatchToProps)(Workout)
