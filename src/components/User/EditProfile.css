@@ -1,0 +1,17 @@
+.editProfileForm {
+  background-color: yellow;
+  text-align: center;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.form {
+  position: relative;
+  top: 0;
+  left: 0;
+  left: 0;
+  right: 0;
+  width: 50%;
+  height: 30%;
+  margin: auto;
+}

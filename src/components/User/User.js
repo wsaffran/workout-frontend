@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import './User.css'
 
 import ProfileHeader from '../User/ProfileHeader'
+import EditProfile from '../User/EditProfile'
 
 class User extends React.Component {
 
@@ -14,9 +15,12 @@ class User extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="wrapper">
         {this.props.currentUser ?
-          <ProfileHeader user={this.props.currentUser} />
+          <>
+            <ProfileHeader user={this.props.currentUser} />
+            <EditProfile user={this.props.currentUser}/>
+          </>
           :
           null
         }
